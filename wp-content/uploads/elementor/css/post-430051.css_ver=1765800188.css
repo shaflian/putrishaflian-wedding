@@ -1,0 +1,50 @@
+.elementor-430051 .elementor-element.elementor-element-5b296c2{--display:flex;--min-height:100dvh;--flex-direction:row;--container-widget-width:initial;--container-widget-height:100%;--container-widget-flex-grow:1;--container-widget-align-self:stretch;--flex-wrap-mobile:wrap;--overflow:hidden;--background-transition:0.3s;--padding-top:0px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-430051 .elementor-element.elementor-element-5b296c2:not(.elementor-motion-effects-element-type-background), .elementor-430051 .elementor-element.elementor-element-5b296c2 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#F3F3F3;}.elementor-430051 .elementor-element.elementor-element-5b296c2, .elementor-430051 .elementor-element.elementor-element-5b296c2::before{--border-transition:0.3s;}.elementor-430051 .elementor-element.elementor-element-8ea13bc{--display:flex;--justify-content:center;--align-items:center;--container-widget-width:calc( ( 1 - var( --container-widget-flex-grow ) ) * 100% );--background-transition:0.3s;}.elementor-430051 .elementor-element.elementor-element-8ea13bc, .elementor-430051 .elementor-element.elementor-element-8ea13bc::before{--border-transition:0.3s;}.elementor-430051 .elementor-element.elementor-element-2d88067 img{width:410px;}.elementor-430051 .elementor-element.elementor-element-395bfc1{--display:flex;--justify-content:center;--background-transition:0.3s;--padding-top:0px;--padding-bottom:0px;--padding-left:90px;--padding-right:0px;}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:last-child){padding-bottom:calc(0px/2);}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items:not(.elementor-inline-items) .elementor-icon-list-item:not(:first-child){margin-top:calc(0px/2);}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:calc(0px/2);margin-left:calc(0px/2);}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items.elementor-inline-items{margin-right:calc(-0px/2);margin-left:calc(-0px/2);}body.rtl .elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{left:calc(-0px/2);}body:not(.rtl) .elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{right:calc(-0px/2);}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-icon i{transition:color 0.3s;}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-icon svg{transition:fill 0.3s;}.elementor-430051 .elementor-element.elementor-element-0e36885{--e-icon-list-icon-size:14px;--icon-vertical-offset:0px;}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-item > .elementor-icon-list-text, .elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-item > a{font-family:"Playfair Display", Sans-serif;font-size:46px;font-weight:400;font-style:normal;letter-spacing:0.5px;}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-text{color:#1A1A1A;transition:color 0.3s;}.elementor-430051 .elementor-element.elementor-element-49acebb .elementor-heading-title{color:#969696;font-family:"lausanne300", Sans-serif;font-size:13px;font-weight:400;line-height:18px;}.elementor-430051 .elementor-element.elementor-element-49acebb{width:var( --container-widget-width, 169px );max-width:169px;--container-widget-width:169px;--container-widget-flex-grow:0;}#elementor-popup-modal-430051 .dialog-message{width:100vw;height:100dvh;align-items:flex-start;}#elementor-popup-modal-430051{justify-content:center;align-items:center;pointer-events:all;background-color:#000000;}#elementor-popup-modal-430051 .dialog-close-button{display:flex;font-size:41px;}#elementor-popup-modal-430051 .dialog-widget-content{animation-duration:0.5s;background-color:#000000;box-shadow:2px 8px 23px 3px rgba(0,0,0,0.2);}#elementor-popup-modal-430051 .dialog-close-button i{color:#1F1F1F;}#elementor-popup-modal-430051 .dialog-close-button svg{fill:#1F1F1F;}@media(max-width:767px){.elementor-430051 .elementor-element.elementor-element-5b296c2{--justify-content:flex-start;--padding-top:120px;--padding-bottom:0px;--padding-left:0px;--padding-right:0px;}.elementor-430051 .elementor-element.elementor-element-395bfc1{--justify-content:flex-start;--padding-top:0px;--padding-bottom:0px;--padding-left:35px;--padding-right:35px;}.elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-item > .elementor-icon-list-text, .elementor-430051 .elementor-element.elementor-element-0e36885 .elementor-icon-list-item > a{font-size:35px;}}/* Start custom CSS for container, class: .elementor-element-8ea13bc */@media (max-width:600px) {
+    .elementor-430051 .elementor-element.elementor-element-8ea13bc {
+        display:none;
+    }
+}/* End custom CSS */
+/* Start custom CSS for icon-list, class: .elementor-element-0e36885 */.elementor-icon-list-item {
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Mencegah elemen lain mengganggu */
+}
+
+.elementor-icon-list-item:hover {
+    transform: translateX(10px); /* Maju ke kanan saat hover */
+}
+
+.elementor-icon-list-text {
+    position: relative;
+    z-index: 1; /* Agar teks terlihat di atas garis */
+}
+
+
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}/* End custom CSS */
+/* Start custom CSS */.eicon-close {
+    transition: transform 0.3s ease-in-out;
+}
+
+.eicon-close:hover {
+    transform: rotate(90deg);
+}
+
+
+.eicon-close:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+html {
+    background-color: #000;
+}/* End custom CSS */
