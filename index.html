@@ -7210,6 +7210,81 @@ jQuery(document).ready(function ($) {
   }, true);
 })();
 </script>
+
+<style>
+/* ===== OFFLINE FIXES v2 ===== */
+
+/* 1. VIDEO WIDGET — ensure overlay fills and centers */
+.video-play .elementor-widget-container { width: 100%; }
+.elementor-widget-video .elementor-wrapper { position: relative; width: 100%; display: block; }
+.elementor-custom-embed-image-overlay {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover; background-position: center center;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.elementor-custom-embed-play { pointer-events: none; }
+.elementor-video { width: 100%; display: block; }
+/* Hide cursor-wrapper in flex so video takes full width */
+.elementor-element-a5a3df1 { display: none !important; }
+.elementor-element-08cc23d { width: 100% !important; flex: 1 1 auto !important; }
+
+/* 2. FONTS — apply lausanne300 globally where post-503286.css would have */
+.elementor-503286 .elementor-heading-title {
+  font-family: 'lausanne300', sans-serif;
+}
+.rmv_star .elementor-heading-title,
+.name-scroll-text .elementor-heading-title {
+  font-family: inherit;
+}
+
+/* 3. GALLERY — simple single-column fallback when e-gallery JS does not run */
+.elementor-gallery__container {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+.e-gallery-item {
+  position: relative !important;
+  width: 100% !important;
+  top: auto !important; left: auto !important;
+  transform: none !important;
+}
+.e-gallery-image {
+  width: 100% !important;
+  padding-bottom: 0 !important;
+  min-height: 300px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+</style>
+
+<script>
+/* Initialize gallery images from data-thumbnail (replaces Elementor gallery JS) */
+(function() {
+  function initGallery() {
+    document.querySelectorAll('.e-gallery-image[data-thumbnail]').forEach(function(el) {
+      var thumb = el.getAttribute('data-thumbnail');
+      var w = parseInt(el.getAttribute('data-width') || 0);
+      var h = parseInt(el.getAttribute('data-height') || 0);
+      if (thumb) el.style.backgroundImage = 'url("' + thumb + '")';
+      if (w && h) {
+        var ratio = Math.round(h / w * 100);
+        el.style.minHeight = '';
+        el.style.paddingBottom = ratio + '%';
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGallery);
+  } else {
+    initGallery();
+  }
+})();
+</script>
         	</body>
 </html>
 
