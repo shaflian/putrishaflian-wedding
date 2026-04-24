@@ -3172,12 +3172,12 @@ var slicewp = {"ajaxurl":"https:\/\/groovepublic.com\/wp-admin\/admin-ajax.php",
 			<!-- WooCommerce Facebook Integration End -->
 			<script>    // Custom Lightbox Gallery yang bisa digeser kanan-kiri - untuk struktur HTML baru
 document.addEventListener('DOMContentLoaded', function() {
-  // Cari semua elemen gambar dalam struktur Swiper yang baru
-  const galleryImages = document.querySelectorAll('.dyncontel-swiper .swiper-slide:not(.swiper-slide-duplicate) .wrap-item-acfslider img');
-  const imageList = Array.from(galleryImages).map(img => {
+  // Target gallery links from Elementor gallery section
+  const galleryLinks = document.querySelectorAll('#gallery .e-gallery-item[href]');
+  const imageList = Array.from(galleryLinks).map(a => {
     return {
-      src: img.getAttribute('src'),
-      alt: img.getAttribute('alt') || ''
+      src: a.getAttribute('href'),
+      alt: a.getAttribute('data-elementor-lightbox-title') || ''
     };
   });
   
@@ -3274,25 +3274,10 @@ document.addEventListener('DOMContentLoaded', function() {
     counter.textContent = `${currentIndex + 1} / ${imageList.length}`;
   }
   
-  // Tambahkan event listener untuk elemen gambar
-  galleryImages.forEach((img, index) => {
-    // Pastikan gambar dan parent wrappernya dapat diklik
-    img.style.cursor = 'pointer';
-    const parentWrapper = img.closest('.wrap-item-acfslider');
-    if (parentWrapper) {
-      parentWrapper.style.cursor = 'pointer';
-      
-      // Tambahkan event listener ke parent wrapper
-      parentWrapper.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        openLightbox(index);
-        return false;
-      });
-    }
-    
-    // Tambahkan juga event listener langsung ke gambar
-    img.addEventListener('click', function(e) {
+  // Attach click handlers to gallery links
+  galleryLinks.forEach((a, index) => {
+    a.style.cursor = 'pointer';
+    a.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
       openLightbox(index);
@@ -3372,8 +3357,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Pastikan lightbox diinisialisasi
     setTimeout(function() {
-      const galleryImages = document.querySelectorAll('.dyncontel-swiper .swiper-slide:not(.swiper-slide-duplicate) .wrap-item-acfslider img');
-      if (galleryImages.length > 0 && !document.getElementById('custom-lightbox')) {
+      const galleryLinks = document.querySelectorAll('#gallery .e-gallery-item[href]');
+      if (galleryLinks.length > 0 && !document.getElementById('custom-lightbox')) {
         console.log('Lightbox not initialized yet, retrying...');
         // Memicu kembali eksekusi script
         const retryEvent = new Event('load-lightbox');
@@ -3627,7 +3612,7 @@ i.fas.fa-check-circle {visibility: hidden;}
 									src="https://pub-bdc10966beea4162a8a70b7e325e8274.r2.dev/bg-video.mp4"
 									poster="wp-content/uploads/2025/08/L1090945_compressed-1.jpg"
 									autoplay muted loop playsinline preload="auto"
-									style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;pointer-events:none;background:#000;"
+									style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;pointer-events:none;"
 									title="Pre-wedding background video"></video>
 							</div>
 						</div><div class="elementor-element elementor-element-e24c8ea e-con-full e-flex e-con e-child" data-id="e24c8ea" data-element_type="container" data-settings="{&quot;position&quot;:&quot;absolute&quot;}">
@@ -4366,7 +4351,7 @@ Duchesse of Dépoqoise from House of Pentland</p><small>24 Aug 2025</small></div
 
 /*tombol hapus*/
 button.hapus-komentar {
-    font-family: lausanne300;
+    font-family: 'creato display', sans-serif;
     font-size: 10px;
     padding: 5px;
     border: none;
@@ -4405,17 +4390,17 @@ column-gap: 74px;
 
 /*TEKS Komentar*/
 .komentar-item p {
-    font-family: lausanne300 !important;
+    font-family: 'creato display', sans-serif !important;
     font-weight: 500;
     font-size: 18px !important;
     color: #FDC232;
     width: 45%;
-    
+
 }
 
 small {
-    font-family: lausanne300;
-    font-weight: 300;
+    font-family: 'creato display', sans-serif;
+    font-weight: 400;
     font-size: 10px;
     color: #FDC232;
     white-space: nowrap;
@@ -4856,10 +4841,6 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 				<div class="elementor-element elementor-element-137caed wdp-sticky-section-no elementor-widget elementor-widget-gallery" data-id="137caed" data-element_type="widget" data-settings="{&quot;gallery_layout&quot;:&quot;masonry&quot;,&quot;columns&quot;:1,&quot;gap&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:60,&quot;sizes&quot;:[]},&quot;gap_mobile&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:23,&quot;sizes&quot;:[]},&quot;columns_tablet&quot;:2,&quot;columns_mobile&quot;:1,&quot;gap_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:10,&quot;sizes&quot;:[]},&quot;link_to&quot;:&quot;file&quot;,&quot;overlay_background&quot;:&quot;yes&quot;,&quot;content_hover_animation&quot;:&quot;fade-in&quot;}" data-widget_type="gallery.default">
 				<div class="elementor-widget-container">
 					<div class="elementor-gallery__container">
-							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="wp-content/uploads/2025/08/L1100154_compressed-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="137caed" data-elementor-lightbox-title="L1100154_compressed" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NTEyMTkyLCJ1cmwiOiJodHRwczpcL1wvZ3Jvb3ZlcHVibGljLmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyNVwvMDhcL0wxMTAwMTU0X2NvbXByZXNzZWQtMS5qcGciLCJzbGlkZXNob3ciOiIxMzdjYWVkIn0%3D">
-					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="wp-content/uploads/2025/08/L1100154_compressed-1.jpg" data-width="1680" data-height="2100" aria-label="" role="img" ></div>
-											<div class="elementor-gallery-item__overlay"></div>
-														</a>
 							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="wp-content/uploads/2025/08/L1090874_compressed-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="137caed" data-elementor-lightbox-title="L1090874_compressed" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NTEyMTg3LCJ1cmwiOiJodHRwczpcL1wvZ3Jvb3ZlcHVibGljLmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyNVwvMDhcL0wxMDkwODc0X2NvbXByZXNzZWQtMS5qcGciLCJzbGlkZXNob3ciOiIxMzdjYWVkIn0%3D">
 					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="wp-content/uploads/2025/08/L1090874_compressed-1.jpg" data-width="2100" data-height="1400" aria-label="" role="img" ></div>
 											<div class="elementor-gallery-item__overlay"></div>
@@ -4914,6 +4895,10 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
 														</a>
 							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="wp-content/uploads/2025/08/L1090556_compressed-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="137caed" data-elementor-lightbox-title="L1090556_compressed" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NTEyMTg1LCJ1cmwiOiJodHRwczpcL1wvZ3Jvb3ZlcHVibGljLmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyNVwvMDhcL0wxMDkwNTU2X2NvbXByZXNzZWQtMS5qcGciLCJzbGlkZXNob3ciOiIxMzdjYWVkIn0%3D">
 					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="wp-content/uploads/2025/08/L1090556_compressed-1.jpg" data-width="2100" data-height="2100" aria-label="" role="img" ></div>
+											<div class="elementor-gallery-item__overlay"></div>
+														</a>
+							<a class="e-gallery-item elementor-gallery-item elementor-animated-content" href="wp-content/uploads/2025/08/L1100154_compressed-1.jpg" data-elementor-open-lightbox="yes" data-elementor-lightbox-slideshow="137caed" data-elementor-lightbox-title="L1100154_compressed" data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6NTEyMTkyLCJ1cmwiOiJodHRwczpcL1wvZ3Jvb3ZlcHVibGljLmNvbVwvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyNVwvMDhcL0wxMTAwMTU0X2NvbXByZXNzZWQtMS5qcGciLCJzbGlkZXNob3ciOiIxMzdjYWVkIn0%3D">
+					<div class="e-gallery-image elementor-gallery-item__image" data-thumbnail="wp-content/uploads/2025/08/L1100154_compressed-1.jpg" data-width="1680" data-height="2100" aria-label="" role="img" ></div>
 											<div class="elementor-gallery-item__overlay"></div>
 														</a>
 					</div>
