@@ -5504,6 +5504,7 @@ function handleVisibilityChange() {
 }
 
 document.getElementById("tombol-buka").onclick = function() {
+    window.__invitationOpened = true;
     unlockSection();
     playAudio();
 };
@@ -5520,8 +5521,12 @@ function enableScrolling() {
     window.onscroll = null;
 }
 
+// Gate: only allow audio after the user has clicked "Open Invitation"
+window.__invitationOpened = false;
+
 // Fungsi untuk memutar audio
 function playAudio() {
+    if (!window.__invitationOpened) return;
     if (wdpAudio) {
         wdpAudio.play();
     }
